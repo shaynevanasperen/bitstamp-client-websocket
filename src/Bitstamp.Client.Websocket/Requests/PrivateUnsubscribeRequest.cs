@@ -4,11 +4,11 @@ using Bitstamp.Client.Websocket.Messages;
 namespace Bitstamp.Client.Websocket.Requests;
 
 /// <summary>
-/// Unsubscribe request
+/// Private unsubscribe request
 /// </summary>
-public class UnsubscribeRequest : DataRequest
+public class PrivateUnsubscribeRequest : PrivateDataRequest
 {
-    public UnsubscribeRequest(string pair, PublicChannel channel) : base(pair, channel) { }
+    public PrivateUnsubscribeRequest(string pair, PrivateChannel channel, string userId) : base(pair, channel, userId) { }
 
     /// <inheritdoc />
     public override string Event => ControlEventNames.Unsubscribe;
