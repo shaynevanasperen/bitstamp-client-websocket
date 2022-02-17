@@ -12,22 +12,26 @@ public abstract class PrivateDataRequest : RequestBase
 {
     readonly string _pair;
     readonly PrivateChannel _channel;
-    readonly string _userId;
 
     string _authToken;
+    int _userId;
 
-    protected PrivateDataRequest(string pair, PrivateChannel channel, string userId)
+    protected PrivateDataRequest(string pair, PrivateChannel channel)
     {
         _pair = pair;
         _channel = channel;
-        _userId = userId;
     }
 
     /// <summary>
     /// Sets the authentication token
     /// </summary>
     /// <param name="token">The token to use (expires after 60 seconds).</param>
-    public void SetAuthToken(string token) => _authToken = token;
+    /// <param name="userId">The user Id from the token response.</param>
+    public void SetAuthToken(string token, int userId)
+    {
+	    _authToken = token;
+	    _userId = userId;
+    }
 
     public PrivateRequestData Data => new()
     {

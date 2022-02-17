@@ -8,7 +8,7 @@ namespace Bitstamp.Client.Websocket.Requests;
 /// </summary>
 public class PrivateUnsubscribeRequest : PrivateDataRequest
 {
-    public PrivateUnsubscribeRequest(string pair, PrivateChannel channel, string userId) : base(pair, channel, userId) { }
+    public PrivateUnsubscribeRequest(string pair, PrivateChannel channel) : base(pair, channel) { }
 
     /// <inheritdoc />
     public override string Event => ControlEventNames.Unsubscribe;

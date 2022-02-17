@@ -8,7 +8,7 @@ namespace Bitstamp.Client.Websocket.Requests;
 /// </summary>
 public class PrivateSubscribeRequest : PrivateDataRequest
 {
-    public PrivateSubscribeRequest(string pair, PrivateChannel channel, string userId) : base(pair, channel, userId) { }
+    public PrivateSubscribeRequest(string pair, PrivateChannel channel) : base(pair, channel) { }
 
     /// <inheritdoc />
     public override string Event => ControlEventNames.Subscribe;
