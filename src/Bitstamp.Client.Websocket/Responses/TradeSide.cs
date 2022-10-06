@@ -5,7 +5,7 @@
 /// </summary>
 public enum TradeSide
 {
-    Undefined,
     Buy,
-    Sell
+    Sell,
+    Undefined = -1
 }

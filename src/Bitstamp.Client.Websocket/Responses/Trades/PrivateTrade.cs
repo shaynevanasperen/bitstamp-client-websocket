@@ -40,23 +40,13 @@ public class PrivateTrade
     public double Fee { get; set; }
 
     /// <summary>
-    /// Trade type (0 - buy; 1 - sell)
+    /// Trade side (buy or sell)
     /// </summary>
-    public int OrderType { get; set; }
+    public TradeSide Side { get; set; }
 
     /// <summary>
     /// Microtimestamp - datetime with milliseconds
     /// </summary>
     [JsonConverter(typeof(UnixDateTimeMillisecondsConverter))]
     public DateTime Microtimestamp { get; set; }
-
-    /// <summary>
-    /// Trade side
-    /// </summary>
-    [JsonIgnore]
-    public TradeSide Side => OrderType == 0
-        ? TradeSide.Buy
-        : OrderType == 1
-            ? TradeSide.Sell
-            : TradeSide.Undefined;
 }
