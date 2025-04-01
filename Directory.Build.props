@@ -3,7 +3,7 @@
 	<!-- Project defaults -->
 
 	<PropertyGroup>
-		<Version>1.1.1</Version>
+		<Version>2.0.0-beta.14</Version>
 	</PropertyGroup>
 
 </Project>
